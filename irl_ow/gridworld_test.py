@@ -10,14 +10,13 @@ import unittest
 import numpy as np
 import numpy.random as rn
 
-import gridworld
-
+from irl_ow.gridworld import Gridworld
 
 def make_random_gridworld():
     grid_size = rn.randint(2, 15)
     wind = rn.uniform(0.0, 1.0)
     discount = rn.uniform(0.0, 1.0)
-    return gridworld.Gridworld(grid_size, wind, discount)
+    return Gridworld(grid_size, wind, discount)
 
 
 class TestTransitionProbability(unittest.TestCase):
